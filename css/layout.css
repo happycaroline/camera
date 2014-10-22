@@ -1,0 +1,91 @@
+
+body {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+h1 {
+  font-size: 2.75em;
+  line-height: 1.09090909em;
+  margin-top: 1.09090909em;
+  margin-bottom: 0.54545455em;
+}
+h2 {
+	font-weight: 300;
+  font-size: 1.9375em;
+  line-height: 1.548387096em;
+  margin-top: 1.5483871em;
+  margin-bottom: 0.77419355em;
+}
+h3 {
+	font-weight: 300;
+  font-size: 1.375em;
+  line-height: 1.090909091em;
+  margin-top: 1.09090909em;
+  margin-bottom: 1.09090909em;
+}
+h4 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+p, ul, ol, pre, table, blockquote {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+/* Sanitation */
+hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+b, strong, em, small, code {
+  line-height: 1;
+}
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+sub {
+  top: 0.4em;
+}
+
+
+.row {
+	width:100%;
+}
+
+.intro {
+	position: relative;
+	padding: 64px 0;
+	
+	text-align: center;
+}
+
+.intro-title {
+	font-size: 3em;
+	font-weight: 300;
+	color:#444;
+}
+
+.intro-image {
+	font-size: 16em;
+	background: rgb(155,89,182); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  rgba(155,89,182,1) 0%, rgba(22,160,133,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(155,89,182,1)), color-stop(100%,rgba(22,160,133,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  rgba(155,89,182,1) 0%,rgba(22,160,133,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  rgba(155,89,182,1) 0%,rgba(22,160,133,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  rgba(155,89,182,1) 0%,rgba(22,160,133,1) 100%); /* IE10+ */
+	background: linear-gradient(135deg,  rgba(155,89,182,1) 0%,rgba(22,160,133,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9b59b6', endColorstr='#16a085',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

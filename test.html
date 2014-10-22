@@ -2,6 +2,94 @@
 <html lang="en">
 	<head>
 		<title>Camera</title>
+<<<<<<< HEAD
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/fonts.css">
+		<link rel="stylesheet" href="css/lightgrid.css">
+		<link rel="stylesheet" href="css/layout.css">
+		<link rel="stylesheet" href="css/camera.css">
+		<link rel="stylesheet" href="css/prism.css">
+		
+		<script src="js/jquery-2.1.1.min.js"></script>
+		<script src="js/prism.js"></script>
+		<script src="dist/camera.js"></script>
+		<script type="text/javascript">
+			var camera = new Camera();
+			
+			var opts = {};
+			
+			camera.start(opts);
+			
+		</script>
+	</head>
+	
+	<body class="row">
+		<section class="intro">
+			
+			<span class="intro-image icon-camera"></span>
+			
+			<h1 class="intro-title">Camera</h1>
+			<h4>A simple javascript library to snap photos.</h4>
+		</section>
+		<section class="main col-8 offset-2">
+			<h2>
+			Getting started
+			</h2>
+			<p>
+				Include camera.js and camera.css in your html.
+			</p>
+			<pre>
+				<code class="language-markup">
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/camera.css&quot;&gt;
+&lt;script src=&quot;js/camera.js&quot;&gt;&lt;/script&gt;</code>
+			</pre>
+			<p>
+				Now start the camera.
+			</p>
+			<pre>
+				<code class="language-javascript">
+var camera = new Camera();
+camera.start();</code>
+			</pre>
+			<p>
+				That will show a preview on the top left of the screen. Click on the button below or press spacebar to snap a photo.
+			</p>
+			<p>
+				You can also snap a photo manually by calling the snap() function.
+			</p>
+			<pre>
+				<code class="language-javascript">
+camera.snap();</code>
+			</pre>
+			<p>And stop it by calling the stop() function.</p>
+			<pre>
+				<code class="language-javascript">
+camera.stop();</code>
+			</pre>
+			<p>This will remove all the elements and event listeners. It is recommend you do this when you don't the camera instance anymore.</p>
+			<h2>Options</h2>
+			<p>You can also pass an object containing options in the camera instance.</p>
+			<pre>
+				<code class="language-javascript">
+// All values listed below are the defaults
+var opts = {
+	fps : 33              // Controls how the fast is the preview
+	mirror : true         // Renders preview as flipped, just as how anything looks in a mirror.
+	disableHotkey : false // Whether spacebar can be used to snap photos
+	onSuccess : null      // Accepts a function. Useful if you want to manually access the video stream
+	onError : null        // Accepts a function. If you want a flash fallback, add it here
+};
+
+var camera = new Camera(opts);</code>
+			</pre>
+			<h2>Issues</h2>
+			<p>You need to run the code from a web server. This is because chrome won't allow webcam access from the file system.</p>
+			<p>camera.js will work on Chrome, Firefox and Opera. IE support is still lacking.</p>
+			<h2>License</h2>
+			<p>camera.js is made by shash7 and is distributed under the MIT license.</p>
+			<p>If you have any bugs or inconsistencies to report, please made a new issue on the github repo.</p>
+		</section>
+=======
 		<script src="dist/camera.js"></script>
 		<script type="text/javascript">
 			var camera = new Camera();
@@ -16,5 +104,6 @@
 			
 		</div>
 		<video></video>
+>>>>>>> origin/master
 	</body>
 </html>
