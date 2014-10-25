@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta charset="utf-8">
+		
 		<title>Camera</title>
 		
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
@@ -12,6 +14,7 @@
 		
 		<script src="js/jquery-2.1.1.min.js"></script>
 		<script src="js/prism.js"></script>
+		<script src="js/gif.js"></script>
 		<script src="dist/camera.js"></script>
 		<script type="text/javascript">
 			var camera = new Camera();
@@ -24,14 +27,33 @@
 	</head>
 	
 	<body class="row">
-		<section class="intro">
-			
-			<span class="intro-image icon-camera"></span>
+	
+		<!-- Header -->
+		<header class="intro">
+			<div>
+				<!-- SVG Icon -->
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="intro-image" viewBox="0 0 20 20">
+					<g id="icomoon-ignore">
+					</g>
+					<linearGradient y2="0.1433" x2="0.0117" id="gradient" x1="1" y1="0.8667">
+					<stop stop-color="rgb(0, 74, 179)" offset="0.0017" stop-opacity="0.6"/>
+					<stop stop-color="rgb(187, 0, 204)" offset="0.9083" stop-opacity="0.6"/>
+					</linearGradient>
+					<path fill="url(#gradient)" d="M10 8c-1.656 0-3 1.344-3 3s1.344 3 3 3c1.657 0 3-1.343 3-3s-1.343-3-3-3zM18 5h-2.399c-0.33 0-0.686-0.256-0.79-0.569l-0.62-1.861c-0.106-0.314-0.461-0.57-0.791-0.57h-6.8c-0.33 0-0.686 0.256-0.789 0.569l-0.622 1.862c-0.104 0.313-0.459 0.569-0.789 0.569h-2.4c-1.1 0-2 0.9-2 2v9c0 1.1 0.9 2 2 2h16c1.101 0 2-0.9 2-2v-9c0-1.1-0.899-2-2-2zM10 16c-2.762 0-5-2.238-5-5s2.238-5 5-5c2.761 0 5 2.239 5 5s-2.239 5-5 5zM17.3 8.398c-0.386 0-0.699-0.313-0.699-0.7s0.313-0.7 0.699-0.7c0.387 0 0.7 0.313 0.7 0.7s-0.313 0.7-0.7 0.7z">
+					</path>
+				</svg>
+			</div>
 			
 			<h1 class="intro-title">Camera</h1>
 			<h4>A simple javascript library to snap photos.</h4>
-		</section>
+		</header>
+		
+		<!-- Body -->
 		<section class="main col-8 offset-2">
+			<h2>Try it out</h2>
+			<label>Change your avatar</label>
+			<input type="file"><span class="icon-camera"></span>
+			
 			<h2>
 			Getting started
 			</h2>
@@ -89,21 +111,6 @@ var camera = new Camera(opts);</code>
 			<p>camera.js is made by shash7 and is distributed under the MIT license.</p>
 			<p>If you have any bugs or inconsistencies to report, please made a new issue on the github repo.</p>
 		</section>
-=======
-		<script src="dist/camera.js"></script>
-		<script type="text/javascript">
-			var camera = new Camera();
-			camera.start();
 		
-		</script>
-	</head>
-	
-	<body>
-		<a href="#" onclick="start()">Take a snap</a>
-		<div class="camera">
-			
-		</div>
-		<video></video>
->>>>>>> origin/master
 	</body>
 </html>

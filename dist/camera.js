@@ -1,10 +1,7 @@
 
-<<<<<<< HEAD
 /* jslint undef: true */
 /* global window, document, $ */
 
-=======
->>>>>>> origin/master
 /* ----------------------------------------------------------------
  * camera.js
  * 
@@ -12,7 +9,6 @@
  * https://github.com/shash7/camera
  * 
  * Licensed under the MIT license
-<<<<<<< HEAD
  * 
  * Api usage :
  * 
@@ -23,17 +19,15 @@
  * ---------------------------------------------------------------- */
 
 
-=======
- * ---------------------------------------------------------------- */
 
->>>>>>> origin/master
+
+
 ;(function(window, document, undefined) {
 	
 	'use strict';
 	
 	function camera(opts) {
-		
-<<<<<<< HEAD
+
 		
 	 /* ----------------------------------------------------------------
 		* globals
@@ -49,9 +43,10 @@
 		var canvas;
 		var video;
 		var body;
-		var button;
+		var snapButton;
 		var container;
 		var hidden;
+		var closeButton;
 		
 		// Canvas contexts
 		var ctx;
@@ -60,6 +55,7 @@
 		// Options
 		var onSuccess     = null;
 		var onError       = null;
+		var onSnap        = null;
 		var fps           = 33;
 		var baseDimension = 64;
 		var mirror        = true;
@@ -76,6 +72,7 @@
 		function setOptions(opts) {
 			onSuccess = opts.onSuccess || null;
 			onError   = opts.onError   || null;
+			onSnap    = opts.onSnap    || null;
 			if(opts.mirror !== undefined) { // Because false is a falsy value so I used undefined
 				if(!opts.mirror) {
 					mirror = false;
@@ -103,9 +100,12 @@
 			canvas.className = 'camera-preview';
 			
 			container.appendChild(canvas);
-			button = document.createElement('div');
-			button.className = 'camera-button';
-			container.appendChild(button);
+			snapButton = document.createElement('div');
+			snapButton.className = 'camera-snap-button';
+			closeButton = document.createElement('button');
+			closeButton.className = 'camera-close-button icon-cross';
+			container.appendChild(closeButton);
+			container.appendChild(snapButton);
 			canvas.width  = previewWidth;
 			canvas.height = previewHeight;
 			body.appendChild(container);
@@ -148,12 +148,12 @@
 		
 		function bindListners() {
 			video.addEventListener('play', drawVideo, false);
-			button.addEventListener('click', takePhoto, false);
+			snapButton.addEventListener('click', takePhoto, false);
 		}
 		
 		function unbindListners() {
 			video.removeEventListener('play', drawVideo, false);
-			button.removeEventListener('click', takePhoto, false);
+			snapButton.removeEventListener('click', takePhoto, false);
 		}
 		
 		function takePhoto() {
@@ -175,10 +175,13 @@
 				invert = -1;
 			}
 			// Every 33 milliseconds copy the video image to the canvas
+			
 			setInterval(function() {
+				
 				ctx.fillRect(0, 0, previewWidth, previewHeight);
-				ctx.drawImage(video, 0, 0, previewWidth * invert, previewHeight);
+				ctx.drawImage(video, 0, 0, previewWidth * invert, previewHeight );
 			}, fps);
+			
 		}
 		
 		function successCallback(stream) {
@@ -230,6 +233,9 @@
 			hiddenCtx.drawImage(video, 0, 0, video.videoWidth * invert, video.videoHeight);
 			var dataURL = hidden.toDataURL();
 			
+			if(onSnap) {
+				onSnap(dataURL);
+			}
 			return dataURL;
 		}
 		
@@ -239,52 +245,15 @@
 			while (container.firstChild) {
 				container.removeChild(container.firstChild);
 			}
-=======
-		var permission = false;
-		var api = false;
-		var resource = {
-			audio : true,
-			video : true
-		};
-		
-		function hasGetUserMedia() {
-			return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
-				navigator.mozGetUserMedia || navigator.msGetUserMedia);
 		}
-		
-		function successCallback(stream) {
-			console.log(stream);
-		}
-		
-		function errorCallback(error) {
-			console.log(error);
-		}
-		
-		function snap() {
-		}
-		
-		function start() {
-			var video = document.querySelector('video');
-if (navigator.getWebkitUserMedia) {
-  navigator.getUserMedia({audio: true, video: true}, function(stream) {
-    video.src = window.URL.createObjectURL(stream);
-  }, errorCallback);
-} else {
-  video.src = 'somevideo.webm'; // fallback.
-}
->>>>>>> origin/master
-		}
+
 		
 		return {
 			snap  : snap,
-<<<<<<< HEAD
+
 			start : start,
 			stop  : stop
 		};
-=======
-			start : start
-		}
->>>>>>> origin/master
 		
 	}
 	
