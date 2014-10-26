@@ -76,3 +76,24 @@ sub {
 .intro-image {
 	width:256px;
 }
+
+input, .input {
+	margin: 4px 4px 4px 0;
+	padding: 4px;
+	vertical-align: middle;
+	
+	border:#DDD solid 1px;
+	border-radius: 3px;
+}
+
+.input.camera {
+	padding: 8px;
+}
+
+.avatar {
+	display: inline-block;
+	width:128px;
+	height:auto;
+	margin: 4px;
+	padding: 0;
+}
