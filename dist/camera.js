@@ -27,7 +27,7 @@
 	'use strict';
 	
 	function camera(opts) {
-
+		opts = opts || {};
 		
 	 /* ----------------------------------------------------------------
 		* globals
@@ -70,9 +70,10 @@
 		* private functions
 		* ---------------------------------------------------------------- */
 		function setOptions(opts) {
-			onSuccess = opts.onSuccess || null;
-			onError   = opts.onError   || null;
-			onSnap    = opts.onSnap    || null;
+			console.log(opts);
+			onSuccess     = opts.onSuccess     || null;
+			onError       = opts.onError       || null;
+			onSnap        = opts.onSnap        || null;
 			if(opts.mirror !== undefined) { // Because false is a falsy value so I used undefined
 				if(!opts.mirror) {
 					mirror = false;
@@ -149,14 +150,16 @@
 		function bindListners() {
 			video.addEventListener('play', drawVideo, false);
 			snapButton.addEventListener('click', takePhoto, false);
+			closeButton.addEventListener('click', stop, false);
 		}
 		
 		function unbindListners() {
 			video.removeEventListener('play', drawVideo, false);
 			snapButton.removeEventListener('click', takePhoto, false);
+			closeButton.removeEventListener('click', stop, false);
 		}
 		
-		function takePhoto() {
+		function takePhoto(e) {
 			if(!buttonActive) {
 				snap();
 				buttonActive = true;
@@ -207,8 +210,7 @@
 	 /* ----------------------------------------------------------------
 		* public functions
 		* ---------------------------------------------------------------- */
-		function start(opts) {
-			opts = opts || {};
+		function start() {
 			var result = hasGetUserMedia();
 			if(result) {
 				setOptions(opts);
@@ -232,7 +234,7 @@
 			hiddenCtx.fillRect(0, 0, video.videoWidth, video.videoHeight);
 			hiddenCtx.drawImage(video, 0, 0, video.videoWidth * invert, video.videoHeight);
 			var dataURL = hidden.toDataURL();
-			
+			console.log(onSnap);
 			if(onSnap) {
 				onSnap(dataURL);
 			}
