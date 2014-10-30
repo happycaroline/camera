@@ -475,4 +475,9 @@ textarea {
 		width:100%!important;
 	}
 	
+	.row {
+		width: 80%;
+		margin: 0 auto;
+	}
+	
 }
